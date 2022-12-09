@@ -1,0 +1,13 @@
+{
+    "groupings": [
+        "@src",
+        [
+            "@app",
+            "@shared",
+            "@pages",
+            "@features",
+            "@entities",
+            "@widgets"
+        ]
+    ]
+}

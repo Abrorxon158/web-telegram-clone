@@ -1,6 +1,6 @@
 import { routes } from '@/shared/config/routing';
 import { lazy } from 'react';
-const Home = lazy(() => import('@/pages/home'));
+const Home = lazy(() => import('@/pages/Home'));
 const Main = lazy(() => import('@/pages/Main'));
 
 export const routesMap = [

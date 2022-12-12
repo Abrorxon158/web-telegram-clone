@@ -3,12 +3,13 @@ import react from '@vitejs/plugin-react';
 
 import path from 'node:path';
 import { packageDirectorySync } from 'pkg-dir';
+import checker from 'vite-plugin-checker';
 
 const packageRoot = packageDirectorySync();
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), checker({ typescript: true })],
   resolve: {
     alias: {
       '@/app': path.resolve(packageRoot, './src/app'),

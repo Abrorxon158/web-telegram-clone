@@ -1,15 +1,11 @@
 import React, { FC } from 'react';
-
 import { routes } from '@/shared/config/routing';
-
 import './model';
 
-const Home: FC = () => {
+export const Main: FC = () => {
   return (
     <div>
-      <h1 onClick={() => routes.main.open()}>Home</h1>
+      <h1 onClick={() => routes.home.open()}>Main</h1>
     </div>
   );
 };
-
-export default Home;

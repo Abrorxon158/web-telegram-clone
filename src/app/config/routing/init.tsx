@@ -1,5 +1,5 @@
 import { createHistoryRouter, redirect } from 'atomic-router';
-import { routesMap } from '@/app/config/routing/roudMap';
+import { routesComponents, routesMap } from '@/app/config/routing/roudMap';
 import { routes } from '@/shared/config/routing';
 import { createRoutesView } from 'atomic-router-react';
 import { createBrowserHistory } from 'history';
@@ -14,7 +14,7 @@ redirect({
 router.setHistory(createBrowserHistory());
 
 export const RoutesView = createRoutesView({
-  routes: routesMap
+  routes: routesComponents
   // otherwise() {
   //   return <div>Page not found!</div>;
   // }

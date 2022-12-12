@@ -2,7 +2,7 @@ import { chainRoute, redirect, RouteInstance, RouteParams, RouteParamsAndQuery }
 import { createEvent, createStore, sample } from 'effector';
 import { routes } from '@/shared/config/routing';
 
-const $isAuthorized = createStore(false);
+const $isAuthorized = createStore(true);
 const tokenReceived = createEvent();
 
 export function protectedRoute<Params extends RouteParams>(route: RouteInstance<Params>) {

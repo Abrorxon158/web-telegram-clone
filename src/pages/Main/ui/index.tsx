@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
+
 import { routes } from '@/shared/config/routing';
-import './model';
+
+import '../model';
 
 export const Main: FC = () => {
   return (

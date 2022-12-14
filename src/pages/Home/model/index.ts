@@ -1,29 +1,15 @@
-import { createEffect, createStore, sample } from 'effector';
-import { onAuthStateChanged } from 'firebase/auth';
-import auth from '@/shared/config/firebase';
-import { routes } from '@/shared/config/routing';
-import { chainRoute } from 'atomic-router';
+import { createEvent, createStore } from 'effector';
+import { createGate } from 'effector-react';
+import { User } from 'firebase/auth';
 
-export const $auth = createStore(null);
+export const userChanged = createEvent<User | null>();
 
-const fetchAuthFx = createEffect(() => {
-  console.log('auth');
-  onAuthStateChanged(auth, (user) => {
-    return user;
-  });
-});
+export const $user = createStore<User | null>(null);
 
-$auth.on(fetchAuthFx.doneData, (_, user) => user);
-routes.home.opened.watch(() => console.log('home'));
-sample({
-  clock: routes.home.$isOpened,
-  target: fetchAuthFx
-});
+interface IProps {
+  test: string;
+}
 
-export const homeLoadedRoute = chainRoute({
-  route: routes.home,
-  beforeOpen: {
-    effect: fetchAuthFx,
-    mapParams: () => {}
-  }
-});
+export const HomeGate = createGate<IProps>();
+
+// HomeGate.state.

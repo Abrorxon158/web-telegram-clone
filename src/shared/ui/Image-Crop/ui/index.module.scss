@@ -1,0 +1,22 @@
+.cropContainer {
+  color: #fff;
+}
+
+.crop {
+  position: absolute;
+}
+.controlButtons {
+  gap: 15px;
+  background: black;
+  height: 70px;
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  button {
+    color: white;
+  }
+}
+
+.scaleImg {
+  transform: scale(-1, 1);
+}
